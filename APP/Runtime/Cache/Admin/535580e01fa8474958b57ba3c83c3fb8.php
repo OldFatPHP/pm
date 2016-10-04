@@ -114,7 +114,7 @@
 				<ul>
 					<li><a _href="member-list.html" data-title="信息列表" href="javascript:;">信息列表</a></li>
 					<li><a _href="member-del.html" data-title="垃圾桶" href="javascript:;">垃圾桶</a></li>
-					<li><a _href="member-level.html" data-title="账号密码库" href="javascript:;">账号密码库</a></li>
+					<li><a _href="<?php echo U(GROUP_NAME . '/Personal/accountList');?>" data-title="账号密码库" href="javascript:;">账号密码库</a></li>
 					<!--<li><a _href="member-scoreoperation.html" data-title="积分管理" href="javascript:;">积分管理</a></li>
 					<li><a _href="member-record-browse.html" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li>
 					<li><a _href="member-record-download.html" data-title="下载记录" href="javascript:void(0)">下载记录</a></li>
