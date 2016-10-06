@@ -29,9 +29,27 @@
         /**
          * 添加账号方法
          */
-        public function accountCreate ($accountData) {
+        public function accountAdd ($accountData) {
             $account = M('pm_account');
             $res = $account->add($accountData);
+            return $res;
+        }
+
+        /**
+         * 根据Id选择账号的方法
+         */
+        public function accountSelect ($accountId) {
+            $where['accountId'] = $accountId;
+            $accountData = M('pm_account')->where($where)->find();
+            return $accountData;
+        }
+
+        /**
+         * 根据id更新账号信息方法
+         */
+        public function accountUpdate ($accountData) {
+            $where['accountId'] = $accountData['accountId'];
+            $res = M('pm_account')->where($where)->save($accountData);
             return $res;
         }
     }

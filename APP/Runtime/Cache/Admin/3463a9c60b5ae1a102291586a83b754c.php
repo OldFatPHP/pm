@@ -1,4 +1,4 @@
-<!--_meta 作为公共模版分离出去-->
+<?php if (!defined('THINK_PATH')) exit();?><!--_meta 作为公共模版分离出去-->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -30,46 +30,47 @@
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-article-add" method="post" action="{:U(GROUP_NAME . '/Personal/accountCreate')}">
+	<form class="form form-horizontal" id="form-article-add" method="post" action="<?php echo U(GROUP_NAME . '/Personal/accountSave');?>">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="网站名称" id="accountName" name="accountName" required>
+				<input type="hidden" name="accountId" value="<?php echo ($accountData["accountId"]); ?>">
+				<input type="text" class="input-text" value="<?php echo ($accountData["accountName"]); ?>" placeholder="网站名称" id="accountName" name="accountName" required>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>URL：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="网站URL" id="accountUrl" name="accountUrl" required>
+				<input type="text" class="input-text" value="<?php echo ($accountData["accountUrl"]); ?>" placeholder="网站URL" id="accountUrl" name="accountUrl" required>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>账号：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="账号" id="accountNumber" name="accountNumber" required>
+				<input type="text" class="input-text" value="<?php echo ($accountData["accountNumber"]); ?>" placeholder="账号" id="accountNumber" name="accountNumber" required>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>密码：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="password" class="input-text" value="" placeholder="密码" id="accountPassword" name="accountPassword" required>
+				<input type="text" class="input-text" value="<?php echo ($accountData["accountPassword"]); ?>" placeholder="密码" id="accountPassword" name="accountPassword" required>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>密码提示：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="密码提示" id="accountPrompt" name="accountPrompt" required>
+				<input type="text" class="input-text" value="<?php echo ($accountData["accountPrompt"]); ?>" placeholder="密码提示" id="accountPrompt" name="accountPrompt" required>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>备注：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="备注" id="accountRemark" name="accountRemark" required>
+				<input type="text" class="input-text" value="<?php echo ($accountData["accountRemark"]); ?>" placeholder="备注" id="accountRemark" name="accountRemark" required>
 			</div>
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-				<button onClick="" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交</button>
+				<button onClick="" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 修改并保存</button>
 				<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>

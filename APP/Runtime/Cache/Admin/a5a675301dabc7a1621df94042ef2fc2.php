@@ -65,7 +65,7 @@
 						<td><?php echo ($accountVo["accountUpdatetime"]); ?></td>
 						<td><?php echo ($accountVo["accountPrompt"]); ?></td>
 						<td><?php echo ($accountVo["accountRemark"]); ?></td>
-						<td class="f-14 td-manage"><a style="text-decoration:none" class="ml-5" onClick="article_edit('资讯编辑','article-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="<?php echo U(GROUP_NAME . '/Personal/accountDelete', array('accountId'=>$accountVo['accountId']));?>" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+						<td class="f-14 td-manage"><a style="text-decoration:none" class="ml-5" href="<?php echo U(GROUP_NAME . '/Personal/accountEdit', array('accountId'=>$accountVo['accountId']));?>" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="<?php echo U(GROUP_NAME . '/Personal/accountDelete', array('accountId'=>$accountVo['accountId']));?>" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>
 		</table>
